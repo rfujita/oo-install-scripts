@@ -8,6 +8,7 @@ source ./oo-install.conf
 oo-register-dns -h ${NODENAME} -d ${DOMAIN} -n ${NODEIP} -k ${KEYFILE}
 
 # Copy over broker pub key info
+ssh root@${NODEHOSTNAME} "if [ ! -d "/root/.ssh/" ] ;then mkdir -m=700 /root/.ssh/; fi"
 scp /etc/openshift/rsync_id_rsa.pub root@${NODEHOSTNAME}:/root/.ssh/
 
 # Setup broker pub key for authentication
