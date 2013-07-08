@@ -30,7 +30,7 @@ if [ "$SLOW" == "yes" ] ; then
     read testinput    
 fi
 ssh root@${NODEHOSTNAME} "yum -y install git"
-ssh root@${NODEHOSTNAME} "cd /root/ ; git clone git://github.com/tdawson/oo-install-scripts.git"
+ssh root@${NODEHOSTNAME} "cd /root/ ; git clone git://github.com/rfujita/oo-install-scripts.git"
 scp ./oo-install.conf root@${NODEHOSTNAME}:${GITDIR}/
 
 if [ "$SLOW" == "yes" ] ; then
